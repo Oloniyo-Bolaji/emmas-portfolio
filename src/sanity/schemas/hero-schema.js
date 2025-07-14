@@ -29,7 +29,22 @@ export default {
         accept: ".pdf",
       },
     },
-    {
+   {
+      name: "instagram",
+      title: "Instagram",
+      type: "url",
+    },
+     {
+      name: "linkedin",
+      title: "Linkedin",
+      type: "url",
+    },
+     {
+      name: "x_twitter",
+      title: "X (Twitter)",
+      type: "url",
+    },
+     {
       name: "profilePicture",
       title: "ProfilePicture",
       type: "image",

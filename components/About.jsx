@@ -2,22 +2,14 @@
 
 import { PortableText } from "next-sanity";
 import React from "react";
-import { DM_Serif_Display } from "next/font/google";
 
-const dmSerif = DM_Serif_Display({
-  weight: "400",
-  subsets: ["latin"],
-});
-
-
-const About = ({about}) => {
-
-
-
+const About = ({ about }) => {
   return (
-    <div className={`${dmSerif.className} lg:min-h-screen`}>
-      <h2>{about[0].title}</h2>
-      <PortableText value={about[0].about}/>
+    <div className="lg:min-h-screen">
+      <h2 className="text-center uppercase font-bold">{about[0].title}</h2>
+      <div className="text-center leading-[25px] text-[15px] px-[30px] py-[20px]">
+        <PortableText value={about[0].about} />
+      </div>
     </div>
   );
 };

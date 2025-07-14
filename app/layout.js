@@ -1,5 +1,10 @@
 import "./globals.css";
+import { Merriweather } from "next/font/google";
 
+const merriweather = Merriweather({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "Odewole Emmanuel's Portfolio",
@@ -9,7 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-[#00b4f010]">{children}</body>
+      <body className={`${merriweather.className} lg:min-h-screen bg-[black]`}>
+        {children}
+      </body>
     </html>
   );
 }

@@ -12,12 +12,8 @@ import { GiNetworkBars, GiGraduateCap } from "react-icons/gi";
 import { urlFor } from "@/lib/imageBuilder";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import gsap from "gsap";
-import { DM_Serif_Display } from "next/font/google";
 
-const dmSerif = DM_Serif_Display({
-  weight: "400",
-  subsets: ["latin"],
-});
+
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -31,7 +27,7 @@ const Navbar = ({hero}) => {
   };
   
   return (
-    <nav className={`${dmSerif.className} sm:h-[60px] h-[60px] sm:w-full text-[white] w-full lg:w-[25%] lg:flex-col lg:h-full lg:justify-start lg:items-start flex justify-between items-center fixed top-0 left-0 bg-[#01007b] z-[1000] px-[40px] py-[0]`}>
+    <nav className="sm:h-[60px] h-[60px] sm:w-full text-[white] w-full lg:w-[25%] lg:flex-col lg:h-full lg:justify-start lg:items-start flex justify-between items-center fixed top-0 left-0 z-[1000] px-[40px] py-[0]">
       <div className="lg:py-[40px] sm:px-[10px]">
         {hero[0].logo && (
           <Image
@@ -39,7 +35,7 @@ const Navbar = ({hero}) => {
             alt="logo"
             width={40}
             height={40}
-            className="w-full h-auto rounded-full object-contain"
+            className="w-full h-auto object-contain"
           />
         )}
       </div>
@@ -50,17 +46,11 @@ const Navbar = ({hero}) => {
         {showMenu ? <IoIosClose /> : <IoMenu />}
       </div>
       <div
-        className={`${showMenu ? "block absolute top-[60px] left-0 w-full z-[1000] overflow-hidden bg-[#01007b] transition-[height] duration-500 ease-in-out" : "sm:block hidden"}`}
+        className={`${showMenu ? "block absolute top-[60px] left-0 w-full z-[1000] overflow-hidden bg-transparent transition-[height] duration-500 ease-in-out" : "sm:block hidden"}`}
       >
         <ul
-          className={`flex lg:flex-col sm:flex-row  sm:justify-between sm:gap-[10px] list-none ${showMenu ? "flex flex-col gap-[10px] justify-center items-center p-[10px]" : ""}`}
+          className={`flex uppercase sm:capitalize lg:flex-col sm:flex-row sm:justify-between sm:gap-[10px] list-none text-[13px] sm:text-[13px] ${showMenu ? "flex flex-col gap-[10px] justify-center items-center p-[10px]" : ""}`}
         >
-          <Link href="/" className="flex gap-[20px] items-center">
-            <span className="hidden lg:block">
-              <MdHome />
-            </span>
-            <span>Home</span>
-          </Link>
           <a href="#about" className="flex gap-[20px] items-center">
             <span className="hidden lg:block">
               <FaUser />

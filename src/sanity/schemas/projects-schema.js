@@ -53,6 +53,7 @@ export default {
       title: "Featured Project",
       type: "boolean",
       initialValue: false,
+      description: "set value to true to have the project displayed ",
     },
     {
       name: "publishedAt",

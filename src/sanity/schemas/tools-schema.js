@@ -17,18 +17,5 @@ export default {
         maxLength: 96,
       },
     },
-      {
-      name: "proficiency",
-      title: "Proficiency",
-      type: "number",
-    },
-    {
-      name: "logo",
-      title: "Logo",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-    },
   ],
 };

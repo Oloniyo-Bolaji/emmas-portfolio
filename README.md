@@ -1,5 +1,12 @@
 
+  useGSAP(() => {
+    gsap.from(".box", { x: 360 });
+    gsap.to(".text", {
+      type: "data analyst",
+    });
+  }, []);
 
+  
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

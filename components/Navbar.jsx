@@ -18,7 +18,7 @@ import gsap from "gsap";
 gsap.registerPlugin(ScrollToPlugin);
 
 
-const Navbar = ({hero}) => {
+const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
  
 
@@ -29,15 +29,13 @@ const Navbar = ({hero}) => {
   return (
     <nav className="sm:h-[60px] h-[60px] sm:w-full text-[white] w-full lg:w-[25%] lg:flex-col lg:h-full lg:justify-start lg:items-start flex justify-between items-center fixed top-0 left-0 z-[1000] px-[40px] py-[0]">
       <div className="lg:py-[40px] sm:px-[10px]">
-        {hero[0].logo && (
           <Image
-            src={urlFor(hero[0].logo).url()}
+            src="/logo.png"
             alt="logo"
             width={40}
             height={40}
             className="w-full h-auto object-contain"
           />
-        )}
       </div>
       <div
         className="icon sm:hidden block lg:hidden text-[25px]"

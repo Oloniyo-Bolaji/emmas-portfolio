@@ -23,5 +23,19 @@ export default {
       type: "array",
       of: [{ type: "block" }],
     },
+    {
+      name: "services",
+      title: "Services",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            { name: "title", type: "string" },
+            { name: "description", type: "text" },
+          ],
+        },
+      ],
+    },
   ],
 };

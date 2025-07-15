@@ -28,15 +28,9 @@ const bebas = Bebas_Neue({
 });
 
 const Hero = ({ hero }) => {
-  useGSAP(() => {
-    gsap.from(".box", { x: 360 });
-    gsap.to(".text", {
-      type: "data analyst",
-    });
-  }, []);
 
   return (
-    <div className="lg:min-h-screen text-[white] py-[20px] px-[20px] sm:px-[30px] flex justify-center items-center flex-col gap-[20px]">
+    <div className="text-[white] py-[20px] px-[20px] sm:px-[30px] flex justify-center items-center flex-col gap-[20px]">
       <div className="rounded-full w-[200px] h-[200px] p-[10px] border-solid border-[5px] border-[white]">
         <div className="relative pt-[10px] w-full h-full rounded-full overflow-hidden p-[10px]">
           {hero[0].profilePicture && (
@@ -53,7 +47,7 @@ const Hero = ({ hero }) => {
       </div>
       <div className="flex flex-col gap-[5px] items-center">
         <h1
-          className={`${bebas.className} font-800 sm:text-[50px] text-[40px] bg-gradient-to-t from-[#01007b] to-[#ffffff] via-[#00b4f0] bg-clip-text text-transparent `}
+          className={`${bebas.className} font-800 sm:text-[50px] text-[30px] bg-gradient-to-t from-[#01007b] to-[#ffffff] via-[#00b4f0] bg-clip-text text-transparent `}
         >
           {hero[0].name}
         </h1>

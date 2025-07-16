@@ -52,3 +52,11 @@ export const getTestimonials = `*[_type == "testimonial"]{
   "image" : image.asset -> url,
   title,
 }`;
+
+export const getArticles = `*[_type == "articles"]{
+  _id,
+  "image" : image.asset -> url,
+  title,
+  description,
+  publishedAt
+}`;

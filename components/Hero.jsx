@@ -1,6 +1,6 @@
 "use client";
 
-import { IoMdDownload } from "react-icons/io";
+import { IoIosArrowRoundUp, IoMdDownload } from "react-icons/io";
 import { urlFor } from "@/lib/imageBuilder";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
@@ -28,6 +28,7 @@ const bebas = Bebas_Neue({
 });
 
 const Hero = ({ hero }) => {
+  console.log(hero)
   useGSAP(() => {
     gsap.fromTo(
       ".profilepic",
@@ -45,20 +46,20 @@ const Hero = ({ hero }) => {
       }
     );
     const animation = gsap.from(".box", {
-       scrollTrigger: {
-         trigger: ".box",
-         start: "top 90%",
-       },
-       y: 50,
-       opacity: 0,
-       stagger: 0.1,
-       duration: 1,
-       ease: "power2.out",
-     });
- 
-     return () => {
-       animation.kill();
-     };
+      scrollTrigger: {
+        trigger: ".box",
+        start: "top 90%",
+      },
+      y: 50,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 1,
+      ease: "power2.out",
+    });
+
+    return () => {
+      animation.kill();
+    };
   }, []);
 
   return (
@@ -126,21 +127,21 @@ const Hero = ({ hero }) => {
             </a>
           </span>
         </div>
-        <div className="flex gap-[20px]">
-          <button className="w-[100px] rounded-[10px] bg-[white] text-[#01007b] p-[10px] text-[13px]">
+        <div className="flex gap-[20px] my-[5px]">
+          <button className=" rounded-[10px] bg-[#01007b] text-[white] p-[10px] text-[13px]">
             <a
-              href={hero[0].resume}
+              href={hero[0].resumeUrl}
               download="Emmanuel_Odewole.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className=""
             >
-              Resume
+              Download Resume
             </a>
           </button>
-          <button className="w-[100px] rounded-[10px] bg-[#01007b] text-[white] p-[10px] text-[13px]">
-            <Link href="">Contact</Link>
-          </button>
+          {/*<button className="w-[100px] rounded-[10px] bg-[#01007b] text-[white] p-[10px] text-[13px]">
+            <span>Contact Me</span>          
+          </button>*/}
         </div>
       </div>
     </div>

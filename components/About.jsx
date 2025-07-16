@@ -31,7 +31,7 @@ const About = ({ about }) => {
   return (
     <div
       id="about" 
-      className="py-[20px] px-[20px] sm:px-[30px] bg-[rgba(105,90,90,0.2)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-[rgba(105,90,90,0.3)] text-white"
+      className=" scroll-mt-[80px] py-[20px] px-[20px] sm:px-[30px] bg-[rgba(105,90,90,0.2)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-[rgba(105,90,90,0.3)] text-white"
     >
       <div>
         <h2 className="text-center uppercase font-bold my-[10px] text-gradient">

@@ -1,18 +1,54 @@
 "use client";
 
 import { urlFor } from "@/lib/imageBuilder";
+import gsap from "gsap";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 
 const Certifications = ({ certs }) => {
+  const cardRefs = useRef([]);
+
+  cardRefs.current = [];
+
+  const addToRefs = (el) => {
+    if (el && !cardRefs.current.includes(el)) {
+      cardRefs.current.push(el);
+    }
+  };
+
+  const handleEnter = (index) => {
+    gsap.to(cardRefs.current[index], {
+      scale: 1.02,
+      duration: 0.3,
+      ease: "power2.out",
+    });
+  };
+
+  const handleLeave = (index) => {
+    gsap.to(cardRefs.current[index], {
+      scale: 1,
+      duration: 0.3,
+      ease: "power2.inOut",
+    });
+  };
+
   return (
-    <div id="certification" className="text-white py-[20px] px-[20px] sm:px-[30px] bg-[rgba(105,90,90,0.2)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-[rgba(105,90,90,0.3)]">
+    <div
+      id="certification"
+      className="text-white py-[20px] px-[20px] sm:px-[30px] bg-[rgba(105,90,90,0.2)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-[rgba(105,90,90,0.3)]"
+    >
       <h2 className="text-center uppercase font-bold my-[10px] text-gradient">
         Certifications
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px]">
-        {certs.map((cert) => (
-          <div key={cert._id} className="border border-solid shadow-[2px_2px_3px_#00b4f0] ">
+        {certs.map((cert, index) => (
+          <div
+            key={cert._id}
+            ref={addToRefs}
+            onMouseEnter={() => handleEnter(index)}
+            onMouseLeave={() => handleLeave(index)}
+            className="border border-solid shadow-[2px_2px_3px_#00b4f0] transition-transform"
+          >
             <div className="w-full h-[200px] relative">
               <Image
                 src={urlFor(cert.image).url()}
@@ -20,18 +56,19 @@ const Certifications = ({ certs }) => {
                 fill
                 priority
                 sizes="auto"
-                className="object-contain" 
+                className="object-contain"
               />
             </div>
             <div className="flex flex-col gap-[10px] items-center justify-center my-[10px]">
-              <h3 className="text-[15px] font-bold text-[#00b4f0]">{cert.title}</h3>
+              <h3 className="text-[15px] font-bold text-[#00b4f0]">
+                {cert.title}
+              </h3>
               <p className="text-[13px]">Skill: {cert.skill}</p>
               <button className="bg-[#01007b] rounded-[5px] text-[13px] p-[10px]">
                 <a
                   href={cert.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className=""
                 >
                   View
                 </a>

@@ -15,7 +15,7 @@ const Blog = async () => {
       <ParticlesBgComponent />
 
       <div className="relative z-10 ">
-        <main className="lg:ml-[25%] sm:mt-[60px] mt-[60px] py-[20px] px-[50px] sm:px-[6c0px]">
+        <main className="lg:ml-[25%] sm:mt-[60px] mt-[60px] py-[20px] px-[50px] sm:px-[60px]">
           <h2 className="text-center uppercase font-bold my-[10px] text-gradient">
             My Articles
           </h2>

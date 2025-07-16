@@ -72,7 +72,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sm:h-[60px] h-[60px] sm:w-full text-[white] w-full lg:w-[25%] lg:flex-col lg:h-full lg:justify-start lg:items-start flex justify-between items-center fixed top-0 left-0 z-[1000] px-[40px] py-[0] shadow-[2px_2px_3px_#01007b] backdrop-blur-md bg-[rgba(0,0,0,0.4)] ">
+    <nav
+      style={{
+        background: "var(--glass-bg)",
+        boxShadow: "var(--glass-shadow)",
+        backdropFilter: "var(--glass-blur)",
+        WebkitBackdropFilter: "var(--glass-blur)",
+        border: "var(--glass-border)",
+      }}
+      className="sm:h-[60px] h-[60px] sm:w-full text-link w-full lg:w-[25%] lg:flex-col lg:h-full lg:justify-start lg:items-start flex justify-between items-center fixed top-0 left-0 z-[1000] px-[40px] py-[0] "
+    >
       <div className="lg:py-[40px] sm:px-[10px]">
         <Image
           src="/logo.png"
@@ -80,23 +89,23 @@ const Navbar = () => {
           width={40}
           height={40}
           priority
-          className="w-full h-auto object-contain"
+          className="w-full h-auto object-contain rounded-full"
         />
       </div>
       <div
-        className="icon sm:hidden block lg:hidden text-[25px]"
+        className="icon sm:hidden block lg:hidden text-link text-[25px]"
         onClick={toggle}
       >
         {showMenu ? <IoIosClose /> : <IoMenu />}
       </div>
       <div
-        className={`${showMenu ? "block absolute top-[60px] left-0 w-full z-[1000] overflow-hidden bg-black transition-[height] duration-500 ease-in-out" : "sm:block hidden"}`}
+        className={`${showMenu ? "block absolute top-[60px] left-0 w-full z-[1000] overflow-hidden bg-dark transition-[height] duration-500 ease-in-out" : "sm:block hidden"}`}
       >
         <ul
           onClick={() => {
             if (showMenu) setShowMenu(false);
           }}
-          className={`flex uppercase sm:capitalize lg:flex-col sm:flex-row sm:justify-between sm:gap-[10px] list-none text-[10px] sm:text-[13px] ${showMenu ? "flex flex-col gap-[10px] justify-center items-center p-[10px]" : ""}`}
+          className={`flex uppercase sm:capitalize lg:flex-col sm:flex-row sm:justify-between text-link sm:gap-[10px] list-none text-[10px] sm:text-[13px] ${showMenu ? "flex flex-col gap-[10px] justify-center items-center p-[10px]" : ""}`}
         >
           <Link href="/" className="flex gap-[20px] items-center">
             <span className="hidden lg:block">

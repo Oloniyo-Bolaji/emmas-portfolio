@@ -8,7 +8,7 @@ const Skills = ({ skills, tools }) => {
 
 
   return (
-    <div id="tools" className="text-[white] py-[20px] px-[20px] sm:px-[30px] ">
+    <div id="tools" className="text-text py-[20px] px-[20px] sm:px-[30px] ">
       <h2 className="text-center uppercase font-bold my-[10px] text-gradient">
         Tools & skills
       </h2>

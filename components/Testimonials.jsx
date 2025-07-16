@@ -12,7 +12,7 @@ const Testimonials = ({ testimonials }) => {
       <h2 className="text-center uppercase font-bold my-[10px] text-gradient">
         Testimonials
       </h2>
-      <p className="text-center text-[#ccc] text-[12px] italics">
+      <p className="text-center text-desc text-[12px] italics">
         This what some of my clients are syaing
       </p>
       <div className=" w-full grid grid-cols-1 sm:grid-cols-2 px-[10px] my-[10px] gap-[10px]">

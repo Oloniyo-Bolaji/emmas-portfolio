@@ -57,7 +57,7 @@ const Contact = () => {
       <h2 className="text-center uppercase font-bold my-[10px] text-gradient">
         Contact Me
       </h2>
-      <p className="text-center text-[#ccc] text-[12px] italics">
+      <p className="text-center text-desc text-[12px]">
         Fill out the form below and I will get back to you as soon as possible.
       </p>
       <div className="p-[20px] m-[10px] sm:p-0 sm:flex sm:items-center sm:justify-center">
@@ -71,7 +71,7 @@ const Contact = () => {
             placeholder="Name"
             value={guest.name}
             onChange={(e) => setGuest({ ...guest, name: e.target.value })}
-            className="bg-transparent h-[40px] placeholder:text-[13px] text-[13px] p-[5px] border-2 border-[#01007b] rounded-[5px] outline-0"
+            className="bg-transparent h-[40px] placeholder:text-[13px] placeholder:text-desc text-[13px] p-[5px] border-2 border-[#01007b] rounded-[5px] outline-0"
           />
           <input
             type="text"
@@ -79,14 +79,14 @@ const Contact = () => {
             placeholder="Email"
             value={guest.email}
             onChange={(e) => setGuest({ ...guest, email: e.target.value })}
-            className="bg-transparent h-[40px] placeholder:text-[13px] text-[13px] p-[5px] border-2 border-[#01007b] rounded-[5px] outline-0"
+            className="bg-transparent h-[40px] placeholder:text-[13px] placeholder:text-desc text-[13px] p-[5px] border-2 border-[#01007b] rounded-[5px] outline-0"
           />
           <textarea
             name="Message"
             placeholder="Message"
             value={guest.message}
             onChange={(e) => setGuest({ ...guest, message: e.target.value })}
-            className="bg-transparent h-[100px] placeholder:text-[13px] text-[13px] p-[5px] border-2 border-[#01007b] rounded-[5px] outline-0"
+            className="bg-transparent h-[100px] placeholder:text-[13px] placeholder:text-desc text-[13px] p-[5px] border-2 border-[#01007b] rounded-[5px] outline-0"
           ></textarea>
           <button className="bg-[#01007b] hover:bg-white hover:text-[#01007b] border border-[#01007b] rounded-[5px] mx-auto w-[70px] flex items-center justify-center p-[5px] text-[20px] outline-0">
             {sending ? (
@@ -109,7 +109,7 @@ const Contact = () => {
 
       <div
         style={{ margin: "10px 0" }}
-        className="flex-column gap-[10px] border-t-[1px] border-solid border-t-white py-[10px] text-[12px]"
+        className="flex-column gap-[10px] border-t-[1px] border-solid border-t-text py-[10px] text-[12px] text-text"
       >
         <button
           onClick={() => {

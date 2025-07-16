@@ -53,17 +53,17 @@ const Projects = ({ projects }) => {
             key={project._id}
             className={`${index % 2 === 0 ? "left" : "right"} rounded-[10px] p-[5px] bg-[rgba(105,90,90,0.2)] shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-[rgba(105,90,90,0.3)]`}
           >
-            <div className="w-full bg-[#000000] rounded-[5px] flex flex-col gap-[5px] h-full p-[20px]">
+            <div className="w-full bg-dark rounded-[5px] flex flex-col gap-[5px] h-full p-[20px]">
               <div className="flex flex-start">
-                <span className="border border-solid border-[#ccc] rounded-[5px] p-[5px] text-[#ccc]">
+                <span className="border border-solid border-desc rounded-[5px] p-[5px] text-desc">
                   <FaDatabase />
                 </span>
               </div>
               <div>
-                <h1 className="text-center font-bold text-[15px]">
+                <h1 className="text-center font-bold text-[15px] text-text">
                   {project.title}
                 </h1>
-                <p className="text-center p-[5px] leading-[25px] text-[#ccc] text-[13px]">
+                <p className="text-center p-[5px] leading-[25px] text-desc text-[13px]">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">

@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${merriweather.className} lg:min-h-screen bg-[black]`}>
+      <body className={`${merriweather.className} lg:min-h-screen bg-background`}>
         <Navbar />
         {children}
       </body>

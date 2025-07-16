@@ -35,7 +35,15 @@ const Certifications = ({ certs }) => {
   return (
     <div
       id="certification"
-      className="text-white py-[20px] px-[20px] sm:px-[30px] bg-[rgba(105,90,90,0.2)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-[rgba(105,90,90,0.3)]"
+       style={{
+        background: "var(--glass-bg)",
+        borderRadius: "var(--glass-radius)",
+        boxShadow: "var(--glass-shadow)",
+        backdropFilter: "var(--glass-blur)",
+        WebkitBackdropFilter: "var(--glass-blur)",
+        border: "var(--glass-border)",
+      }}
+      className="text-text py-[20px] px-[20px] sm:px-[30px] "
     >
       <h2 className="text-center uppercase font-bold my-[10px] text-gradient">
         Certifications
@@ -47,7 +55,7 @@ const Certifications = ({ certs }) => {
             ref={addToRefs}
             onMouseEnter={() => handleEnter(index)}
             onMouseLeave={() => handleLeave(index)}
-            className="border border-solid shadow-[2px_2px_3px_#00b4f0] transition-transform"
+            className="border border-solid shadow-[2px_2px_3px_#ccc] transition-transform"
           >
             <div className="w-full h-[200px] relative">
               <Image

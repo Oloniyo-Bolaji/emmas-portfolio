@@ -21,17 +21,25 @@ const About = ({ about }) => {
       stagger: 0.2,
       ease: "power3.out",
       scrollTrigger: {
-      trigger: staggerRef.current,
-      start: "top 80%",              
-      toggleActions: "play none none none", 
-    },
+        trigger: staggerRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
     });
   }, []);
 
   return (
     <div
-      id="about" 
-      className=" scroll-mt-[80px] py-[20px] px-[20px] sm:px-[30px] bg-[rgba(105,90,90,0.2)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-[rgba(105,90,90,0.3)] text-white"
+      id="about"
+      style={{
+        background: "var(--glass-bg)",
+        borderRadius: "var(--glass-radius)",
+        boxShadow: "var(--glass-shadow)",
+        backdropFilter: "var(--glass-blur)",
+        WebkitBackdropFilter: "var(--glass-blur)",
+        border: "var(--glass-border)",
+      }}
+      className=" scroll-mt-[80px] py-[20px] px-[20px] sm:px-[30px] text-text"
     >
       <div>
         <h2 className="text-center uppercase font-bold my-[10px] text-gradient">
@@ -48,7 +56,7 @@ const About = ({ about }) => {
           {about[0].services.map((service) => (
             <div
               key={service._key}
-              className="text-center p-[10px] border border-double shadow-[2px_2px_3px_#00b4f060] rounded-[5px]"
+              className="text-center p-[10px] border border-double shadow-[2px_2px_3px_#ccc] rounded-[5px]"
             >
               <h2 className="text-[13px] uppercase font-bold">
                 {service.title}

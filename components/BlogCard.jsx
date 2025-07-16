@@ -6,7 +6,7 @@ import Image from "next/image";
 import React, { useRef } from "react";
 import gsap from "gsap";
 
-const cardRefs = []; // outside component scope to persist across renders
+const cardRefs = []; 
 
 const BlogCard = ({ article, index }) => {
   const cardRef = useRef();
@@ -56,7 +56,7 @@ const BlogCard = ({ article, index }) => {
         </div>
       )}
       <div className="mt-2">
-        <div className="text-[10px] text-gray-400 mb-1">
+        <div className="text-[10px] text-desc mb-1">
           <span>Emmanuel</span> ·{" "}
           <span>
             {new Date(article.publishedAt).toLocaleDateString("en-GB", {
@@ -66,8 +66,8 @@ const BlogCard = ({ article, index }) => {
             })}
           </span>
         </div>
-        <h2 className="text-[15px] font-semibold mb-1">{article.title}</h2>
-        <p className="text-[13px] text-gray-300">
+        <h2 className="text-[15px] font-semibold mb-1 text-text">{article.title}</h2>
+        <p className="text-[12px] text-desc">
           {getPlainText(article.description).slice(0, 100)}...
         </p>
       </div>

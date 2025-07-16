@@ -28,7 +28,7 @@ const bebas = Bebas_Neue({
 });
 
 const Hero = ({ hero }) => {
-  console.log(hero)
+
   useGSAP(() => {
     gsap.fromTo(
       ".profilepic",
@@ -64,7 +64,7 @@ const Hero = ({ hero }) => {
 
   return (
     <div className="text-[white] py-[20px] px-[20px] sm:px-[30px] flex-column gap-[20px]">
-      <div className=" profilepic rounded-full w-[200px] h-[200px] p-[10px] border-solid border-[5px] border-[white]">
+      <div className=" profilepic rounded-full w-[200px] h-[200px] p-[10px] border-solid border-[5px] border-text">
         <div className="relative pt-[10px] w-full h-full rounded-full overflow-hidden p-[10px]">
           {hero[0].profilePicture && (
             <Image
@@ -84,7 +84,7 @@ const Hero = ({ hero }) => {
         >
           {hero[0].name}
         </h1>
-        <h3 className="text-[15px]">
+        <h3 className="text-[15px] text-text">
           <Typewriter
             words={[hero[0].techField]}
             cursorStyle="_"
@@ -92,11 +92,11 @@ const Hero = ({ hero }) => {
             cursorBlinking={true}
           />
         </h3>
-        <div className="text-[13px] text-center text-[#ccc]">
+        <div className="text-[13px] text-center text-desc">
           <PortableText value={hero[0].introduction} />
         </div>
         <div className="flex gap-[15px]">
-          <span className="flex-center w-[40px] h-[40px] rounded-full bg-white">
+          <span className="flex-center w-[40px] h-[40px] rounded-full bg-text">
             <a
               href={hero[0].instagram}
               target="_blank"
@@ -106,7 +106,7 @@ const Hero = ({ hero }) => {
               <FaInstagram />
             </a>
           </span>
-          <span className="flex-center w-[40px] h-[40px] rounded-full bg-white">
+          <span className="flex-center w-[40px] h-[40px] rounded-full bg-text">
             <a
               href={hero[0].linkedin}
               target="_blank"
@@ -116,7 +116,7 @@ const Hero = ({ hero }) => {
               <FaLinkedinIn />
             </a>
           </span>
-          <span className="flex-center w-[40px] h-[40px] rounded-full bg-white">
+          <span className="flex-center w-[40px] h-[40px] rounded-full bg-text">
             <a
               href={hero[0].x_twitter}
               target="_blank"

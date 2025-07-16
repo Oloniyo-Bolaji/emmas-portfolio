@@ -6,11 +6,10 @@ import React from "react";
 import { FaDatabase } from "react-icons/fa";
 
 const Projects = ({ projects }) => {
-  console.log(projects);
 
   return (
-    <div className="text-white py-[20px] px-[20px] sm:px-[30px]">
-      <h2 className="text-center uppercase font-bold my-[10px] bg-gradient-to-t from-[#01007b] to-[#ffffff] via-[#00b4f0] bg-clip-text text-transparent">
+    <div id="projects" className="text-white py-[20px] px-[20px] sm:px-[30px]">
+      <h2 className="text-center uppercase font-bold my-[10px] text-gradient">
         Featured Projects
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-[10px] ">
@@ -19,7 +18,7 @@ const Projects = ({ projects }) => {
             key={project._id}
             className="rounded-[10px] p-[5px] bg-[rgba(105,90,90,0.2)] shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-[rgba(105,90,90,0.3)]"
           >
-            <div className="w-full bg-[#000000] rounded-[5px] flex flex-col  h-full p-[20px]">
+            <div className="w-full bg-[#000000] rounded-[5px] flex flex-col gap-[5px] h-full p-[20px]">
               <div className="flex flex-start">
                 <span className="border border-solid border-[#ccc] rounded-[5px] p-[5px] text-[#ccc]">
                   <FaDatabase />

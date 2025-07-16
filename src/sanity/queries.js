@@ -46,3 +46,9 @@ export const getProjects = `*[_type == "projects" && featured == true] | order(o
     title,
   }
 }`;
+
+export const getTestimonials = `*[_type == "testimonial"]{
+  _id,
+  "image" : image.asset -> url,
+  title,
+}`;

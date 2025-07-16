@@ -8,8 +8,8 @@ const Skills = ({ skills, tools }) => {
 
 
   return (
-    <div className="text-[white] py-[20px] px-[20px] sm:px-[30px] ">
-      <h2 className="text-center uppercase font-bold my-[10px] bg-gradient-to-t from-[#01007b] to-[#ffffff] via-[#00b4f0] bg-clip-text text-transparent">
+    <div id="tools" className="text-[white] py-[20px] px-[20px] sm:px-[30px] ">
+      <h2 className="text-center uppercase font-bold my-[10px] text-gradient">
         Tools & skills
       </h2>
       <div className="flex flex-col sm:flex-row gap-[10px] sm:gap-[20px]">

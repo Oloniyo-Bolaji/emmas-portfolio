@@ -9,12 +9,14 @@ import {
   getHero,
   getProjects,
   getSkills,
+  getTestimonials,
   getTools,
 } from "@/src/sanity/queries";
 import ParticlesBgComponent from "@/components/ParticlesWrapper";
 import Certifications from "@/components/Certifications";
 import Projects from "@/components/Projects";
 import Testimonials from "@/components/Testimonials";
+import Contact from "@/components/Contact";
 
 const options = { next: { revalidate: 30 } };
 
@@ -25,6 +27,8 @@ const Home = async () => {
   const skills = await client.fetch(getSkills, {}, options);
   const certs = await client.fetch(getCerts, {}, options);
   const projects = await client.fetch(getProjects, {}, options);
+  const testimonials = await client.fetch(getTestimonials, {}, options);
+
 
   return (
     <div className="relative">
@@ -37,7 +41,8 @@ const Home = async () => {
           <Skills skills={skills} tools={tools} />
           <Certifications certs={certs} />
           <Projects projects={projects} />
-          <Testimonials />
+          <Testimonials testimonials={testimonials}/>
+          <Contact />
         </main>
       </div>
     </div>

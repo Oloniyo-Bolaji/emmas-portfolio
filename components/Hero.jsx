@@ -8,13 +8,13 @@ import React, { useEffect } from "react";
 import { Michroma } from "next/font/google";
 import { Bebas_Neue } from "next/font/google";
 import gsap from "gsap";
-import SplitText from "gsap/SplitText";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import { Typewriter } from "react-simple-typewriter";
 import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
-gsap.registerPlugin(SplitText);
+gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 
 const michroma = Michroma({
@@ -28,10 +28,42 @@ const bebas = Bebas_Neue({
 });
 
 const Hero = ({ hero }) => {
+  useGSAP(() => {
+    gsap.fromTo(
+      ".profilepic",
+      { scale: 0.5, opacity: 0 },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".profilepic",
+          start: "top 80%", // when top of box hits 80% of viewport
+          toggleActions: "play none none none", // run once
+        },
+      }
+    );
+    const animation = gsap.from(".box", {
+       scrollTrigger: {
+         trigger: ".box",
+         start: "top 90%",
+       },
+       y: 50,
+       opacity: 0,
+       stagger: 0.1,
+       duration: 1,
+       ease: "power2.out",
+     });
+ 
+     return () => {
+       animation.kill();
+     };
+  }, []);
 
   return (
-    <div className="text-[white] py-[20px] px-[20px] sm:px-[30px] flex justify-center items-center flex-col gap-[20px]">
-      <div className="rounded-full w-[200px] h-[200px] p-[10px] border-solid border-[5px] border-[white]">
+    <div className="text-[white] py-[20px] px-[20px] sm:px-[30px] flex-column gap-[20px]">
+      <div className=" profilepic rounded-full w-[200px] h-[200px] p-[10px] border-solid border-[5px] border-[white]">
         <div className="relative pt-[10px] w-full h-full rounded-full overflow-hidden p-[10px]">
           {hero[0].profilePicture && (
             <Image
@@ -45,9 +77,9 @@ const Hero = ({ hero }) => {
           )}
         </div>
       </div>
-      <div className="flex flex-col gap-[5px] items-center">
+      <div className="box flex flex-col gap-[5px] items-center">
         <h1
-          className={`${bebas.className} font-800 sm:text-[50px] text-[30px] bg-gradient-to-t from-[#01007b] to-[#ffffff] via-[#00b4f0] bg-clip-text text-transparent `}
+          className={`${bebas.className} font-800 sm:text-[50px] text-[30px] text-gradient`}
         >
           {hero[0].name}
         </h1>
@@ -63,7 +95,7 @@ const Hero = ({ hero }) => {
           <PortableText value={hero[0].introduction} />
         </div>
         <div className="flex gap-[15px]">
-          <span className="flex justify-center items-center w-[40px] h-[40px] rounded-full bg-white">
+          <span className="flex-center w-[40px] h-[40px] rounded-full bg-white">
             <a
               href={hero[0].instagram}
               target="_blank"
@@ -73,7 +105,7 @@ const Hero = ({ hero }) => {
               <FaInstagram />
             </a>
           </span>
-          <span className="flex justify-center items-center w-[40px] h-[40px] rounded-full bg-white">
+          <span className="flex-center w-[40px] h-[40px] rounded-full bg-white">
             <a
               href={hero[0].linkedin}
               target="_blank"
@@ -83,7 +115,7 @@ const Hero = ({ hero }) => {
               <FaLinkedinIn />
             </a>
           </span>
-          <span className="flex justify-center items-center w-[40px] h-[40px] rounded-full bg-white">
+          <span className="flex-center w-[40px] h-[40px] rounded-full bg-white">
             <a
               href={hero[0].x_twitter}
               target="_blank"

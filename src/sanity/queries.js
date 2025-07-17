@@ -3,7 +3,6 @@ export const getHero = `*[_type == "hero"]{
     name,
     introduction, 
     techField,
-    instagram,
     x_twitter,
     linkedin,
     "resumeUrl" : resume.asset->url,
@@ -23,7 +22,7 @@ export const getSkills = `*[_type == "skills"]{
   title,
 }`;
 
-export const getTools = `*[_type == "tools"]{
+export const getTools = `*[_type == "tools"] | order(order asc){
   _id,
   title,
 }`;

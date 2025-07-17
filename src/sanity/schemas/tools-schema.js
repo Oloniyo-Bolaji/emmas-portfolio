@@ -17,5 +17,12 @@ export default {
         maxLength: 96,
       },
     },
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+      description:
+        "Set a number to control project display order (lower = higher priority)",
+    },
   ],
 };

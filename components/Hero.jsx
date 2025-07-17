@@ -98,16 +98,6 @@ const Hero = ({ hero }) => {
         <div className="flex gap-[15px]">
           <span className="flex-center w-[40px] h-[40px] rounded-full bg-text">
             <a
-              href={hero[0].instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#E1306C] text-[20px]"
-            >
-              <FaInstagram />
-            </a>
-          </span>
-          <span className="flex-center w-[40px] h-[40px] rounded-full bg-text">
-            <a
               href={hero[0].linkedin}
               target="_blank"
               rel="noopener noreferrer"

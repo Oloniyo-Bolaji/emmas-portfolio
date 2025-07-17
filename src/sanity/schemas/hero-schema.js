@@ -29,11 +29,6 @@ export default {
         accept: ".pdf",
       },
     },
-   {
-      name: "instagram",
-      title: "Instagram",
-      type: "url",
-    },
      {
       name: "linkedin",
       title: "Linkedin",

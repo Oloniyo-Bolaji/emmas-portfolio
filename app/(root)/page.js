@@ -31,11 +31,10 @@ const Home = async () => {
 
 
   return (
-    <div className="relative">
+    <div className="relative lg:ml-[25%] sm:mt-[60px] mt-[60px] max-w-[940px]">
       <ParticlesBgComponent />
 
-      <div className="relative z-10 flex flex-col sm:flex-col lg:flex-row">
-        <main className="lg:ml-[25%] sm:mt-[60px] mt-[60px]">
+      <div className="relative z-10 ">
           <Hero hero={hero} />
           <About about={about} />
           <Skills skills={skills} tools={tools} />
@@ -43,7 +42,6 @@ const Home = async () => {
           <Projects projects={projects} />
           <Testimonials testimonials={testimonials}/>
           <Contact />
-        </main>
       </div>
     </div>
   );

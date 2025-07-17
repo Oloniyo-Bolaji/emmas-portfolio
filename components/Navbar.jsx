@@ -151,7 +151,7 @@ const Navbar = () => {
             <span>Contact</span>
           </a>
           <button
-            className="text-[yellow] text-[20px] bg-[#d1dfe830] p-[5px] rounded-[10px] border-solis border-[1px] border-desc"
+            className="text-[yellow] w-fit text-[20px] bg-[#d1dfe830] p-[5px] rounded-[10px] border-solis border-[1px] border-desc"
             onClick={() => {
               setIsDark(!isDark);
               document.documentElement.classList.toggle("dark");

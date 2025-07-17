@@ -7,13 +7,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Scrollbar } from "swiper/modules";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 
 const Testimonials = ({ testimonials }) => {
-  console.log(testimonials);
-
   return (
     <div
       id="testimonials"
@@ -34,10 +30,10 @@ const Testimonials = ({ testimonials }) => {
           WebkitBackdropFilter: "var(--glass-blur)",
           border: "var(--glass-border)",
         }}
-        className="w-full h-[250px] flex-column px-[30px] relative  mt-[10px] "
+        className="w-full sm:h-[250px] h-[300px] flex flex-col justify-between items-center p-[30px] relative text-black"
       >
         <div>
-          <span className="text-[#00b4f030] sm:text-[25px] text-[20px] align-top mr-[2px]">
+          <span className="text-[#00b4f030] sm:text-[25px] text-[20px] ">
             <FaQuoteLeft />
           </span>
         </div>
@@ -54,9 +50,9 @@ const Testimonials = ({ testimonials }) => {
               <SwiperSlide>
                 <div
                   key={testimonial._id}
-                  className="relative h-full text-center p-[10px] overflow-hidden text-text flex flex-col gap-[10px]"
+                  className="relative text-center overflow-hidden text-text gap-[5px]"
                 >
-                  <p className="text-text text-[15px] leading-[25px] font-bold">
+                  <p className="text-text text-[15px]  font-bold">
                     {`"${testimonial.review}"`}
                   </p>
                   <h2 className="font-bold text-[13px] italic">

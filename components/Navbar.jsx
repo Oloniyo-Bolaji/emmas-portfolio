@@ -13,6 +13,8 @@ import { GiNetworkBars, GiGraduateCap } from "react-icons/gi";
 import { urlFor } from "@/lib/imageBuilder";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import gsap from "gsap";
+import { getHero } from "@/src/sanity/queries";
+import { client } from "@/src/sanity/client";
 
 gsap.registerPlugin(ScrollToPlugin);
 function getSamePageAnchor(link) {
@@ -39,6 +41,7 @@ function scrollToHash(hash, e) {
     });
   }
 }
+const options = { next: { revalidate: 30 } };
 
 const Navbar = () => {
   useEffect(() => {
@@ -66,10 +69,19 @@ const Navbar = () => {
 
   const [showMenu, setShowMenu] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const [logo, setLogo] = useState(null);
 
   const toggle = () => {
     setShowMenu(!showMenu);
   };
+  useEffect(() => {
+    const fetchHero = async () => {
+      const data = await client.fetch(getHero, {}, options);
+      setLogo(data[0].logo);
+    };
+
+    fetchHero();
+  }, []);
 
   return (
     <nav
@@ -83,14 +95,17 @@ const Navbar = () => {
       className="sm:h-[60px] h-[60px] sm:w-full text-link w-full lg:w-[25%] lg:flex-col lg:h-full lg:justify-start lg:items-start flex justify-between items-center fixed top-0 left-0 z-[1000] px-[40px] py-[0] "
     >
       <div className="lg:py-[40px] sm:px-[10px]">
-        <Image
-          src="/logo.png"
-          alt="logo"
-          width={40}
-          height={40}
-          priority
-          className="w-full h-auto object-contain rounded-full"
-        />
+        {logo && (
+          <Image
+            src={urlFor(logo).url()}
+            alt="logo"
+            width={40}
+            height={40}
+            priority
+            quality={60}
+            className="w-full h-auto object-contain rounded-full"
+          />
+        )}
       </div>
       <div
         className="icon sm:hidden block lg:hidden text-link text-[25px]"

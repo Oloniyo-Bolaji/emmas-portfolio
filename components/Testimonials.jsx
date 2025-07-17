@@ -4,10 +4,12 @@ import { urlFor } from "@/lib/imageBuilder";
 import Image from "next/image";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import { Pagination, Autoplay } from "swiper/modules";
-import "swiper/css/pagination";
+import { Pagination, Autoplay, Scrollbar } from "swiper/modules";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 const Testimonials = ({ testimonials }) => {
   console.log(testimonials);
@@ -32,41 +34,43 @@ const Testimonials = ({ testimonials }) => {
           WebkitBackdropFilter: "var(--glass-blur)",
           border: "var(--glass-border)",
         }}
-        className="w-full h-[200px] flex-center px-[30px] relative  mt-[10px] "
+        className="w-full h-[250px] flex-column px-[30px] relative  mt-[10px] "
       >
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={1}
-          modules={[Autoplay, Pagination]}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
-        >
-          {testimonials.map((testimonial) => (
-            <SwiperSlide>
-              <div
-                key={testimonial._id}
-                className="relative h-full text-center p-[10px] overflow-hidden text-text"
-              >
-                <p className="text-text text-[13px] italic">
-                  <span className="text-[#00b4f0] text-[16px] align-top mr-[2px]">
-                    <FaQuoteLeft />
-                  </span>
-                  {testimonial.review}
-                  <span className="text-[#00b4f0] text-[16px] align-bottom ml-[2px]">
-                    <FaQuoteRight />
-                  </span>
-                </p>
-
-                <h2 className="font-bold text-[13px]">
-                  {testimonial.clientname}
-                </h2>
-                <p className="text-desc text-[11px] italic">
-                  {testimonial.clienttitle}
-                </p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <div>
+          <span className="text-[#00b4f030] sm:text-[25px] text-[20px] align-top mr-[2px]">
+            <FaQuoteLeft />
+          </span>
+        </div>
+        <div className="w-full">
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+            modules={[Pagination]}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            {testimonials.map((testimonial) => (
+              <SwiperSlide>
+                <div
+                  key={testimonial._id}
+                  className="relative h-full text-center p-[10px] overflow-hidden text-text flex flex-col gap-[10px]"
+                >
+                  <p className="text-text text-[15px] leading-[25px] font-bold">
+                    {`"${testimonial.review}"`}
+                  </p>
+                  <h2 className="font-bold text-[13px] italic">
+                    {testimonial.clientname}
+                  </h2>
+                  <p className="text-desc text-[11px]">
+                    {testimonial.clienttitle}
+                  </p>
+                  <p className="my-[5px]"></p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </div>
   );

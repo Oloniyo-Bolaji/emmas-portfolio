@@ -129,7 +129,7 @@ const Navbar = () => {
             <span className="hidden lg:block">
               <GiGraduateCap />
             </span>
-            <span>Certification</span>
+            <span>Certifications</span>
           </a>
           <a href="#projects" className="flex gap-[20px] items-center">
             <span className="hidden lg:block">

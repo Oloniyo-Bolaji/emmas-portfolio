@@ -64,17 +64,24 @@ const Certifications = ({ certs }) => {
                 fill
                 priority
                 sizes="auto"
-                className="object-cover"
+                className="object-contain"
               />
             </div>
             <div className="w-[70%] flex flex-col gap-[10px]">
-              <h1 className="text-[13px] font-bold text-[#00b4f0]">{cert.title}</h1>
-              <span className="text-[12px] italic underline">{cert.platform}</span>
-              <button className="bg-[#01007b] rounded-[5px] text-[13px] p-[10px] w-fit text-white">
-                <a href={cert.link} target="_blank" rel="noopener noreferrer">
-                  View
-                </a>
-              </button>
+              <h1 className="text-[13px] font-bold text-[#00b4f0]">
+                {cert.title}
+              </h1>
+              <span className="text-[12px] font-bold text-text">
+                {cert.platform}
+              </span>
+              <a
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[12px] underline w-fit text-[blue] cursor-grabbing"
+              >
+                View
+              </a>
             </div>
           </div>
         ))}

@@ -39,7 +39,7 @@ const About = ({ about }) => {
         WebkitBackdropFilter: "var(--glass-blur)",
         border: "var(--glass-border)",
       }}
-      className=" scroll-mt-[80px] py-[20px] px-[20px] sm:px-[30px] text-text"
+      className="py-[20px] px-[20px] sm:px-[30px] text-text"
     >
       <div>
         <h2 className="text-center uppercase font-bold my-[10px] text-gradient">

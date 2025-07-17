@@ -8,12 +8,11 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 
-
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 
 const Projects = ({ projects }) => {
- useGSAP(() => {
+  useGSAP(() => {
     gsap.utils.toArray(".left").forEach((el) => {
       gsap.from(el, {
         scrollTrigger: {
@@ -39,7 +38,6 @@ const Projects = ({ projects }) => {
         ease: "power2.out",
       });
     });
- 
   }, []);
 
   return (
@@ -85,6 +83,7 @@ const Projects = ({ projects }) => {
                   sizes="auto"
                   className="object-contain"
                   priority
+                  quality={60}
                 />
               </div>
               <div className="mx-auto">

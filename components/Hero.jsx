@@ -84,7 +84,7 @@ const Hero = ({ hero }) => {
         >
           {hero[0].name}
         </h1>
-        <h3 className="text-[15px] text-text">
+        <h3 className="text-[15px] text-text font-bold">
           <Typewriter
             words={[hero[0].techField]}
             cursorStyle="_"

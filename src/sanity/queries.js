@@ -28,11 +28,11 @@ export const getTools = `*[_type == "tools"]{
   title,
 }`;
 
-export const getCerts = `*[_type == "certs"]{
+export const getCerts = `*[_type == "certs"] | order(order asc){
   _id,
   "image" : image.asset -> url,
   title,
- skill,
+ platform,
  link
 }`;
 
@@ -49,14 +49,8 @@ export const getProjects = `*[_type == "projects" && featured == true] | order(o
 
 export const getTestimonials = `*[_type == "testimonial"]{
   _id,
-  "image" : image.asset -> url,
+  clientname,
+  clienttitle,
+  review,
   title,
-}`;
-
-export const getArticles = `*[_type == "articles"]{
-  _id,
-  "image" : image.asset -> url,
-  title,
-  description,
-  publishedAt
 }`;

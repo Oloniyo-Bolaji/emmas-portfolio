@@ -35,7 +35,7 @@ const Certifications = ({ certs }) => {
   return (
     <div
       id="certification"
-       style={{
+      style={{
         background: "var(--glass-bg)",
         borderRadius: "var(--glass-radius)",
         boxShadow: "var(--glass-shadow)",
@@ -55,29 +55,23 @@ const Certifications = ({ certs }) => {
             ref={addToRefs}
             onMouseEnter={() => handleEnter(index)}
             onMouseLeave={() => handleLeave(index)}
-            className="border border-solid shadow-[2px_2px_3px_#ccc] transition-transform"
+            className="shadow-[2px_2px_3px_#888] transition-transform flex gap-[20px] rounded-[5px] p-[10px]"
           >
-            <div className="w-full h-[200px] relative">
+            <div className="w-[30%] relative">
               <Image
                 src={urlFor(cert.image).url()}
                 alt={cert.title}
                 fill
                 priority
                 sizes="auto"
-                className="object-contain"
+                className="object-cover"
               />
             </div>
-            <div className="flex flex-col gap-[10px] items-center justify-center my-[10px]">
-              <h3 className="text-[15px] font-bold text-[#00b4f0]">
-                {cert.title}
-              </h3>
-              <p className="text-[13px]">Skill: {cert.skill}</p>
-              <button className="bg-[#01007b] rounded-[5px] text-[13px] p-[10px]">
-                <a
-                  href={cert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+            <div className="w-[70%] flex flex-col gap-[10px]">
+              <h1 className="text-[13px] font-bold text-[#00b4f0]">{cert.title}</h1>
+              <span className="text-[12px] italic underline">{cert.platform}</span>
+              <button className="bg-[#01007b] rounded-[5px] text-[13px] p-[10px] w-fit text-white">
+                <a href={cert.link} target="_blank" rel="noopener noreferrer">
                   View
                 </a>
               </button>

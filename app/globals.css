@@ -37,7 +37,7 @@
   --glass-shadow: var(--glass-shadow);
   --glass-blur: var(--glass-blur);
   --glass-border: var(--glass-border);
-  --color-dark : var(--dark-background);
+  --color-dark: var(--dark-background);
   --color-desc: var(--desc);
   --color-link: var(--link);
 }
@@ -53,3 +53,5 @@
   --desc: #ccc;
   --link: white;
 }
+
+

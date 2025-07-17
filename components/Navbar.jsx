@@ -150,12 +150,6 @@ const Navbar = () => {
             </span>
             <span>Contact</span>
           </a>
-          <Link href="/blog" className="flex gap-[20px] items-center">
-            <span className="hidden lg:block">
-              <FaBloggerB />
-            </span>
-            <span>Blog</span>
-          </Link>
           <button
             className="text-[yellow] text-[20px] bg-[#d1dfe830] p-[5px] rounded-[10px] border-solis border-[1px] border-desc"
             onClick={() => {

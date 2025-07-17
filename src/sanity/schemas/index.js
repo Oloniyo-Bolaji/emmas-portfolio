@@ -6,7 +6,6 @@ const { default: skillsSchema } = require("./skills-schema");
 import certSchemas from "./cert-schemas";
 import toolsSchemas from "./tools-schema"
 import testimonialSchema from "./testimonial-schema";
-import blogSchema from './blog-shema'
 
 
 const schemas = [
@@ -18,7 +17,6 @@ const schemas = [
   projectsSchema,
   testimonialSchema,
   contactSchema,
-  blogSchema,
 ];
 
 export default schemas;

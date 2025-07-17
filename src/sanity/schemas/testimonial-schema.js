@@ -9,12 +9,19 @@ export default {
       type: "string",
     },
     {
-      name: "image",
-      title: "Image",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
+      name: "clientname",
+      title: "Clientname",
+      type: "string",
+    },
+      {
+      name: "clienttitle",
+      title: "Clienttitle",
+      type: "string",
+    },
+    {
+      name: "review",
+      title: "Review",
+      type: "string",
     },
   ],
 };

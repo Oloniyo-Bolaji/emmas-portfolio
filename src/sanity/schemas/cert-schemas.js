@@ -18,16 +18,22 @@ export default {
       description: "Certificate title",
     },
     {
-      name: "skill",
-      title: "Skill",
+      name: "platform",
+      title: "Platform",
       type: "string",
-      description: "Skill learnt",
     },
     {
       name: "link",
       title: "Link",
       type: "url",
       description: "link to Certificate ",
+    },
+     {
+      name: "order",
+      title: "Order",
+      type: "number",
+      description:
+        "Set a number to control project display order (lower = higher priority)",
     },
   ],
 };

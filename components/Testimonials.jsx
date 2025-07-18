@@ -30,7 +30,7 @@ const Testimonials = ({ testimonials }) => {
           WebkitBackdropFilter: "var(--glass-blur)",
           border: "var(--glass-border)",
         }}
-        className="w-full sm:h-[250px] h-[300px] flex flex-col justify-between items-center p-[30px] relative text-black"
+        className="w-full sm:h-[250px] h-[300px] flex flex-col justify-evenly items-center px-[30px] py-[10px] relative text-black"
       >
         <div>
           <span className="text-[#00b4f030] sm:text-[25px] text-[20px] ">

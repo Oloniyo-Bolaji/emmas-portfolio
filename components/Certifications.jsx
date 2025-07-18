@@ -63,6 +63,7 @@ const Certifications = ({ certs }) => {
                 alt={cert.title}
                 fill
                 priority
+                quality={60}
                 sizes="auto"
                 className="object-contain"
               />

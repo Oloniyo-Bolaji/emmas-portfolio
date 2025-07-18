@@ -71,7 +71,7 @@ const Contact = () => {
             placeholder="Name"
             value={guest.name}
             onChange={(e) => setGuest({ ...guest, name: e.target.value })}
-            className="bg-transparent h-[40px] placeholder:text-[13px] placeholder:text-desc text-[13px] p-[5px] border-2 border-[#01007b] rounded-[5px] outline-0"
+            className="bg-transparent text-text h-[40px] placeholder:text-[13px] placeholder:text-desc text-[13px] p-[5px] border-2 border-[#01007b] rounded-[5px] outline-0"
           />
           <input
             type="text"
@@ -79,14 +79,14 @@ const Contact = () => {
             placeholder="Email"
             value={guest.email}
             onChange={(e) => setGuest({ ...guest, email: e.target.value })}
-            className="bg-transparent h-[40px] placeholder:text-[13px] placeholder:text-desc text-[13px] p-[5px] border-2 border-[#01007b] rounded-[5px] outline-0"
+            className="bg-transparent text-text h-[40px] placeholder:text-[13px] placeholder:text-desc text-[13px] p-[5px] border-2 border-[#01007b] rounded-[5px] outline-0"
           />
           <textarea
             name="Message"
             placeholder="Message"
             value={guest.message}
             onChange={(e) => setGuest({ ...guest, message: e.target.value })}
-            className="bg-transparent h-[100px] placeholder:text-[13px] placeholder:text-desc text-[13px] p-[5px] border-2 border-[#01007b] rounded-[5px] outline-0"
+            className="bg-transparent text-text h-[100px] placeholder:text-[13px] placeholder:text-desc text-[13px] p-[5px] border-2 border-[#01007b] rounded-[5px] outline-0"
           ></textarea>
           <button className="bg-[#01007b] hover:bg-white hover:text-[#01007b] border border-[#01007b] rounded-[5px] mx-auto w-[70px] flex items-center justify-center p-[5px] text-[20px] outline-0">
             {sending ? (
